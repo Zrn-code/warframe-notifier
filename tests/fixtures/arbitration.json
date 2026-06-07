@@ -1,0 +1,10 @@
+{
+  "id": "arb-active-1",
+  "node": "Helene (Saturn)", "nodeKey": "Helene (Saturn)",
+  "activation": "2026-06-07T13:00:00.000Z",
+  "expiry": "2999-01-01T00:00:00.000Z",
+  "enemy": "Grineer",
+  "type": "Defense", "typeKey": "Defense",
+  "archwing": false, "sharkwing": false,
+  "expired": false
+}

@@ -1,0 +1,62 @@
+# Warframe 通知器設定檔。改完存檔即可，不用動程式。
+# 機密（webhook URL）放在 .env，不在這裡。
+
+poll_interval_seconds: 150        # API 快取 120s，間隔需 >= 120
+language: tc                      # 顯示語言 (tc=繁中)；過濾一律用英文 *Key，不受影響
+state_file: state.json
+log_file: notifier.log
+
+http:
+  connect_timeout: 5
+  read_timeout: 15
+  retries: 3                      # 失敗退避重試：1s, 2s, 4s (+ 隨機抖動)
+
+channels: [discord]               # 啟用的通知管道；目前只用 Discord webhook
+
+sources:
+  # ── 核心：虛空裂縫，只要 Axi 一般裂縫 ──
+  - name: fissures
+    enabled: true
+    endpoint: /pc/fissures/
+    rules:
+      tier_nums: [4]              # 1 Lith, 2 Meso, 3 Neo, 4 Axi, 5 Requiem, 6 Omnia
+      mission_type_keys: []       # 空 = 不限任務類型；例: [Survival, Defense, Capture]
+      steel_path: "no"            # yes / no / both  -> isHard
+      void_storm: "no"            # yes / no / both  -> isStorm
+
+  # ── Baro Ki'Teer 虛空商人：抵達預告 + 現身 ──
+  - name: voidTrader
+    enabled: true
+    endpoint: /pc/voidTrader/
+    notify_on: [arriving, here]   # 可改成 [here] 只在他真的到場時提醒
+
+  # ── 每日突擊 ──
+  - name: sortie
+    enabled: true
+    endpoint: /pc/sortie/
+
+  # ── 每週執政官狩獵 ──
+  - name: archonHunt
+    enabled: true
+    endpoint: /pc/archonHunt/
+
+  # ── 仲裁：約每小時換節點（最吵），用 allow-list 壓噪 ──
+  - name: arbitration
+    enabled: true
+    endpoint: /pc/arbitration/
+    rules:
+      mission_type_keys: [Survival, Defense, Interception, Disruption]  # 只通知這些；其他不吵你
+      min_minutes_left: 30        # 剩餘 < 30 分就不通知（來不及玩）
+
+  # ── 夜光：只通知週常/精英挑戰，略過每日 ──
+  - name: nightwave
+    enabled: true
+    endpoint: /pc/nightwave/
+    rules:
+      include_daily: false        # true = 連每日挑戰也通知
+      elite_only: false           # true = 只通知精英挑戰
+
+  # ── 限時活動 / 行動 ──
+  - name: events
+    enabled: true
+    endpoint: /pc/events/

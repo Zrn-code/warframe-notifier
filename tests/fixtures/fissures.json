@@ -1,0 +1,35 @@
+[
+  {
+    "id": "axi-survival-match",
+    "activation": "2026-06-07T12:00:00.000Z",
+    "expiry": "2999-01-01T00:00:00.000Z",
+    "node": "Oceanum (Pluto)", "nodeKey": "Oceanum (Pluto)",
+    "missionType": "Survival", "missionTypeKey": "Survival",
+    "enemy": "Corpus", "enemyKey": "Corpus",
+    "tier": "Axi", "tierNum": 4, "isStorm": false, "isHard": false
+  },
+  {
+    "id": "axi-steelpath-excluded",
+    "expiry": "2999-01-01T00:00:00.000Z",
+    "missionType": "Defense", "missionTypeKey": "Defense",
+    "tier": "Axi", "tierNum": 4, "isStorm": false, "isHard": true
+  },
+  {
+    "id": "lith-tier-excluded",
+    "expiry": "2999-01-01T00:00:00.000Z",
+    "missionType": "Capture", "missionTypeKey": "Capture",
+    "tier": "Lith", "tierNum": 1, "isStorm": false, "isHard": false
+  },
+  {
+    "id": "axi-storm-excluded",
+    "expiry": "2999-01-01T00:00:00.000Z",
+    "missionType": "Survival", "missionTypeKey": "Survival",
+    "tier": "Axi", "tierNum": 4, "isStorm": true, "isHard": false
+  },
+  {
+    "id": "axi-expired-excluded",
+    "expiry": "2000-01-01T00:00:00.000Z",
+    "missionType": "Survival", "missionTypeKey": "Survival",
+    "tier": "Axi", "tierNum": 4, "isStorm": false, "isHard": false
+  }
+]

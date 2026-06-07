@@ -1,0 +1,24 @@
+{
+  "id": "nightwave-season-test",
+  "activation": "2026-04-08T15:30:00.000Z",
+  "expiry": "2999-01-01T00:00:00.000Z",
+  "season": 17,
+  "tag": "RadioLegionIntermission",
+  "activeChallenges": [
+    {
+      "id": "nw-daily-1", "expiry": "2999-01-01T00:00:00.000Z",
+      "isDaily": true, "isElite": false, "title": "Deep Impact",
+      "desc": "Suspend 5 or more enemies", "reputation": 1000
+    },
+    {
+      "id": "nw-weekly-1", "expiry": "2999-01-01T00:00:00.000Z",
+      "isDaily": false, "isElite": false, "title": "Mission Complete IX",
+      "desc": "Complete 9 missions", "reputation": 4500
+    },
+    {
+      "id": "nw-elite-1", "expiry": "2999-01-01T00:00:00.000Z",
+      "isDaily": false, "isElite": true, "title": "Sortie Expert",
+      "desc": "Complete 3 sorties", "reputation": 7000
+    }
+  ]
+}

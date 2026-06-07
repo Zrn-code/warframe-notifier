@@ -1,0 +1,3 @@
+requests>=2.32      # HTTP client (Session, timeouts) — already installed
+pyyaml>=6.0         # parse config.yaml — already installed
+python-dotenv>=1.0  # load secrets from .env — needs install

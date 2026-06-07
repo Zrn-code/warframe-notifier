@@ -1,0 +1,15 @@
+# secrets
+.env
+
+# runtime state / logs
+state.json
+state.json.tmp
+*.log
+service.*.log
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
